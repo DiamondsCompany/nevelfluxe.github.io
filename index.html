@@ -139,7 +139,7 @@ nav .on .ic{filter:brightness(1.35) drop-shadow(0 0 5px #fff9)}
 <div id="app"></div><div id="modal" onclick="if(event.target==this)X()"><div id="mb"></div></div>
 <div id="ov"></div><div id="chip" onclick="ovShow()">⏳ Pedido en revisión</div>
 <script>
-const AD='adanreyricardo@gmail.com',K='nlx_luxe_v2';
+const ADS=['adanreyricardo@gmail.com','arderiflow9@gmail.com'],AD=ADS[0],K='nlx_luxe_v2';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function def(){return{users:[],ses:null,orders:[],reviews:[],theme:'light',
 games:[{n:'Free Fire',pk:[[110,265],[341,795],[572,1325],[1166,2650],[2398,5300],[6160,13250]]}],
@@ -149,7 +149,7 @@ function load(){try{const s=JSON.parse(localStorage.getItem(K));if(s)S=s}catch(e
 function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
 load();
 const me=()=>S.users.find(u=>u.email==S.ses);
-const isAd=()=>me()&&(me().email==AD||me().admin);
+const isAd=()=>me()&&(ADS.includes(me().email)||me().admin);
 let tab='home',at='cli',watch=null,seen=null,P={};
 const T=(m)=>({saldo:'Saldo Móvil',banco:'Transferencia bancaria',usdt:'USDT',cred:'Créditos'}[m]);
 const ago=t=>{const m=Math.round((Date.now()-t)/60000);return m<1?'ahora':m<60?m+' min':Math.round(m/60)+' h'};
@@ -167,7 +167,7 @@ function doLog(){load();const e=$('#e').value.trim().toLowerCase(),p=$('#p').val
 if(!u)return alert('Correo o contraseña incorrectos');if(u.ban)return alert('Cuenta baneada');S.ses=e;save();R()}
 function doReg(){load();const n=$('#n').value.trim(),e=$('#e').value.trim().toLowerCase(),p=$('#p').value;
 if(!n||!e||p.length<4)return alert('Completa nombre, correo y contraseña (mín. 4)');if(S.users.find(u=>u.email==e))return alert('Ese correo ya existe');
-S.users.push({n,tel:$('#t').value.trim(),email:e,pass:p,cr:0,admin:e==AD,ban:false,ts:Date.now()});S.ses=e;save();R()}
+S.users.push({n,tel:$('#t').value.trim(),email:e,pass:p,cr:0,admin:ADS.includes(e),ban:false,ts:Date.now()});S.ses=e;save();R()}
 function out(){S.ses=null;save();R()}
 /* LAYOUT */
 function R(){load();if(!me())return authView();theme();
@@ -249,7 +249,7 @@ function profile(){const u=me(),n=S.orders.filter(o=>o.email==u.email).length;$(
 <div class="card"><div class="row"><span>📱 Teléfono</span><b>${esc(u.tel||'—')}</b></div><div class="row"><span>👛 Créditos</span><b>${u.cr} NLX</b></div><div class="row"><span>🧾 Pedidos</span><b>${n}</b></div><div class="row"><span>📅 Miembro desde</span><b>${new Date(u.ts).toLocaleDateString()}</b></div></div><button class="b no" onclick="out()">Cerrar sesión</button>`}
 /* ADMIN */
 function admin(){if(!isAd())return go('home');const tabs=[['cli','Clientes'],['off','Ofertas'],['ped','Pedidos'],['aj','Ajustes']];let h=`<div style="display:flex;gap:6px;margin-bottom:10px;overflow:auto">${tabs.map(t=>`<button class="b sm ${at==t[0]?'':'g'}" onclick="at='${t[0]}';R()">${t[1]}</button>`).join('')}</div>`;
-if(at=='cli')h+=S.users.map((u,i)=>`<div class="card"><b>${esc(u.n)}</b> ${u.admin||u.email==AD?'<span class="tag t-ok">ADMIN</span>':''}${u.ban?'<span class="tag t-no">BAN</span>':''}<div class="mu">${esc(u.email)} · ${esc(u.tel||'—')} · ${u.cr} NLX</div>${u.email!=AD?`<button class="b sm no" onclick="uf(${i},'ban')">${u.ban?'Desbanear':'Banear'}</button><button class="b sm" onclick="uf(${i},'admin')">${u.admin?'Quitar admin':'Poner admin'}</button>`:''}<button class="b sm g" onclick="addCr(${i})">± Créditos</button></div>`).join('');
+if(at=='cli')h+=S.users.map((u,i)=>`<div class="card"><b>${esc(u.n)}</b> ${u.admin||ADS.includes(u.email)?'<span class="tag t-ok">ADMIN</span>':''}${u.ban?'<span class="tag t-no">BAN</span>':''}<div class="mu">${esc(u.email)} · ${esc(u.tel||'—')} · ${u.cr} NLX</div>${!ADS.includes(u.email)?`<button class="b sm no" onclick="uf(${i},'ban')">${u.ban?'Desbanear':'Banear'}</button><button class="b sm" onclick="uf(${i},'admin')">${u.admin?'Quitar admin':'Poner admin'}</button>`:''}<button class="b sm g" onclick="addCr(${i})">± Créditos</button></div>`).join('');
 if(at=='off')h+=S.games.map((g,i)=>`<div class="card"><input id="gn${i}" value="${esc(g.n)}"><label class="mu">Paquetes (diamantes,precio por línea)</label><textarea id="gp${i}" rows="7">${g.pk.map(p=>p.join(',')).join('\n')}</textarea><button class="b sm" onclick="svG(${i})">Guardar</button><button class="b sm no" onclick="S.games.splice(${i},1);save();R()">Eliminar</button></div>`).join('')+`<button class="b" onclick="S.games.push({n:'Nuevo juego',pk:[[100,200]]});save();R()">➕ Añadir juego</button>`;
 if(at=='ped')h+=S.orders.slice().sort((a,b)=>b.ts-a.ts).map(o=>orderRow(o,1)).join('')||'<p class="mu">Sin pedidos</p>';
 if(at=='aj'){const c=S.cfg,f=(k,l)=>`<label class="mu">${l}</label><input id="c_${k}" value="${esc(c[k])}">`;h+=`<div class="card">${f('wa1','WhatsApp soporte 1')}${f('wa2','WhatsApp soporte 2')}${f('group','Link del grupo')}${f('channel','Link del canal')}${f('rate','Saldo por 1 crédito NLX')}${f('phone','Teléfono para Saldo Móvil')}${f('card','Tarjeta')}${f('confirm','Móvil a confirmar')}${f('usdt','Dirección USDT')}<label class="mu">Avisos (uno por línea)</label><textarea id="c_n" rows="4">${esc(c.notices.join('\n'))}</textarea><button class="b" onclick="svC()">Guardar ajustes</button></div>`}
