@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>♛ 𝐍𝐄𝐕𝐋 𝐋𝐔𝐗𝐄 ♛</title>
+<style>
+:root{--bg:#0a0a14;--card:#15152a;--tx:#f1f1ff;--mu:#9a9ac0;--ac:#ffc83d;--ac2:#8b5cf6;--ok:#22c55e;--no:#ef4444;--bd:#2a2a4a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=light]{--bg:#f4f3fb;--card:#fff;--tx:#18182e;--mu:#65658a;--bd:#dcdcf0}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--tx);font:15px system-ui,sans-serif;padding-bottom:84px;min-height:100vh}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid var(--bd);gap:6px}
+.logo{font-weight:800;font-size:17px;background:linear-gradient(90deg,var(--ac),#ff7ac6,var(--ac2),var(--ac));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 4s linear infinite;text-shadow:0 0 18px #ffc83d55}
+@keyframes sh{to{background-position:300%}}
+.ib{display:flex;gap:6px}.ib button{width:34px;height:34px;border-radius:50%;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:15px}
+main{padding:12px;max-width:560px;margin:auto}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px}
+h2{font-size:17px;margin-bottom:8px}h3{font-size:15px;margin-bottom:6px}
+.hero{background:linear-gradient(135deg,#6d28d9,#db2777,#f59e0b);color:#fff;text-align:center;padding:22px 14px;border-radius:18px;margin-bottom:12px;box-shadow:0 8px 30px #8b5cf655}
+.hero b{font-size:21px;display:block}
+.msgs{display:grid;gap:8px;margin-bottom:12px}.msgs div{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 12px;font-weight:600;animation:fl 3s ease-in-out infinite}
+.msgs div:nth-child(2){animation-delay:.4s}.msgs div:nth-child(3){animation-delay:.8s}
+@keyframes fl{50%{transform:translateY(-3px);border-color:var(--ac)}}
+.offer{cursor:pointer;display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#ff6a00,#ee0979);color:#fff;border:0;width:100%;text-align:left;border-radius:16px;padding:16px;margin-bottom:12px;font-size:16px;font-weight:700;box-shadow:0 6px 24px #ee097966}
+.offer span{font-size:30px}
+button.b,.b{display:block;width:100%;padding:12px;border:0;border-radius:12px;background:linear-gradient(90deg,var(--ac2),#ec4899);color:#fff;font-weight:700;font-size:15px;margin-top:8px;cursor:pointer;text-align:center;text-decoration:none}
+.b.g{background:var(--card);border:1px solid var(--bd);color:var(--tx)}.b.ok{background:var(--ok)}.b.no{background:var(--no)}.b.sm{width:auto;display:inline-block;padding:7px 12px;font-size:13px;margin:4px 4px 0 0}
+input,textarea,select{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;margin-top:6px}
+.pk{display:flex;justify-content:space-between;width:100%;padding:13px;margin-top:8px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:15px;font-weight:600}
+.pms{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pms button{padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-weight:700}.pms .on{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--bd);font-size:14px}.row:last-child{border:0}
+.mu{color:var(--mu);font-size:13px}
+.tag{padding:3px 9px;border-radius:20px;font-size:12px;font-weight:700;color:#fff}.t-p{background:#f59e0b}.t-ok{background:var(--ok)}.t-no{background:var(--no)}
+nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--bd);display:flex;padding-bottom:env(safe-area-inset-bottom,0px);z-index:20}
+nav button{flex:1;padding:9px 2px;background:none;border:0;color:var(--mu);font-size:11px}nav button span{display:block;font-size:19px}nav .on{color:var(--ac)}
+#modal{position:fixed;inset:0;background:#000a;z-index:40;display:none;align-items:flex-end;justify-content:center}
+#modal>div{background:var(--card);width:100%;max-width:560px;max-height:88vh;overflow:auto;border-radius:20px 20px 0 0;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+#ov{position:fixed;inset:0;z-index:60;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 30%,#2a1060,#07070f)}
+#ov *{color:#fff}
+.ring{width:130px;height:130px;border-radius:50%;border:6px solid #ffffff22;border-top-color:var(--ac);border-right-color:#ec4899;animation:sp 1s linear infinite;box-shadow:0 0 40px #8b5cf6;position:relative;margin-bottom:20px}
+.ring:after{content:"💎";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:44px;animation:sp 1s linear infinite reverse}
+@keyframes sp{to{transform:rotate(360deg)}}
+.res{width:130px;height:130px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:70px;margin-bottom:20px;animation:pop .6s ease,pu 1.6s 0.6s infinite}
+@keyframes pop{from{transform:scale(0)}}@keyframes pu{50%{box-shadow:0 0 70px 20px var(--c)}}
+.sum{background:#ffffff14;border-radius:14px;padding:12px 16px;margin:14px 0;min-width:250px;text-align:left;line-height:1.7}
+#chip{position:fixed;right:12px;bottom:90px;z-index:30;display:none;background:var(--ac2);color:#fff;border-radius:30px;padding:10px 14px;font-weight:700;box-shadow:0 4px 20px #0008}
+.stars{font-size:24px;color:var(--ac);cursor:pointer;letter-spacing:3px}
+.bot{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--ac2),#06b6d4);display:flex;align-items:center;justify-content:center;font-size:28px;animation:pu 2s infinite;--c:#8b5cf6;margin:0 auto 8px}
+.chat{max-height:240px;overflow:auto;display:grid;gap:6px;margin:8px 0}.chat div{padding:8px 11px;border-radius:12px;max-width:85%}.me{background:var(--ac2);color:#fff;justify-self:end}.rx{background:var(--bg);border:1px solid var(--bd)}
+.auth{max-width:380px;margin:8vh auto;padding:16px}
+.big{font-size:34px;font-weight:800;color:var(--ac)}
+.live{display:flex;gap:10px;align-items:center}.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);animation:pu 1.2s infinite;--c:var(--ok)}
+:root{--bg:#f3f6ff;--card:#fff;--tx:#0b1230;--mu:#6b7599;--ac:#2563eb;--ac2:#3b82f6;--bd:#e1e8fb}
+:root[data-theme=light]{--bg:#f3f6ff;--card:#fff;--tx:#0b1230;--mu:#6b7599;--bd:#e1e8fb}
+:root[data-theme=dark]{--bg:#070d24;--card:#111a3d;--tx:#eef2ff;--mu:#93a0cc;--bd:#23305e}
+body{padding-bottom:110px;background-image:linear-gradient(#2563eb0d 1px,transparent 1px),linear-gradient(90deg,#2563eb0d 1px,transparent 1px);background-size:28px 28px}
+.logo{background-image:linear-gradient(90deg,#1d4ed8,#06b6d4,#7c3aed,#1d4ed8);text-shadow:none;filter:drop-shadow(0 0 6px #3b82f655)}
+.top{top:calc(env(safe-area-inset-top,0px) + 6px);background:var(--card);padding:8px 10px 8px 14px;margin:6px 10px;border:2px solid var(--ac);border-radius:30px;box-shadow:0 6px 24px #2563eb33}
+.hero{background:linear-gradient(135deg,#0b1a5c,#1d4ed8 65%,#06b6d4);text-align:left;box-shadow:0 10px 30px #1d4ed855;border-radius:24px}.hero b{font-size:27px;margin-bottom:4px}
+.card{border-radius:22px;box-shadow:0 6px 20px #2563eb12}
+button.b,.b{background:linear-gradient(180deg,#3b82f6,#1d4ed8);box-shadow:0 6px 16px #1d4ed844;border-radius:14px}
+.b.g,.b.ok,.b.no{box-shadow:none}
+nav{bottom:calc(env(safe-area-inset-bottom,0px) + 8px);left:10px;right:10px;border:2px solid #bfd3ff;border-radius:30px;padding:6px;gap:4px;box-shadow:0 8px 28px #2563eb33}
+nav button{border-radius:24px;padding:8px 2px}nav .on{color:#fff;background:linear-gradient(180deg,#3b82f6,#1d4ed8);box-shadow:0 4px 14px #1d4ed888}
+.gg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.gc{background:var(--card);border:1px solid var(--bd);border-radius:22px;overflow:hidden;cursor:pointer;color:var(--tx);padding:0;text-align:left;box-shadow:0 6px 18px #2563eb1a}.gc .im{height:110px;display:flex;align-items:center;justify-content:center;font-size:48px;background:linear-gradient(135deg,#ff9a00,#c2185b 60%,#4c1d95)}.gc .nm{padding:12px;font-weight:800;display:flex;justify-content:space-between}
+.pks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}.pk{flex-direction:column;align-items:flex-start;gap:4px;margin:0;padding:12px;border-radius:18px;font-size:13px;font-weight:500}.pk b{font-size:28px}.pk i{font-style:normal;background:linear-gradient(180deg,#3b82f6,#1d4ed8);color:#fff;padding:7px 12px;border-radius:12px;font-weight:800;font-size:15px}
+.pt{font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.1}.ph{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:8px 0 14px}
+.seg{display:flex;background:var(--card);border:1px solid var(--bd);border-radius:24px;padding:4px}.seg button,.fl button{border:0;background:none;color:var(--mu);padding:8px 12px;border-radius:20px;font-weight:700;font-size:13px}.seg .on,.fl .on{background:linear-gradient(180deg,#3b82f6,#1d4ed8);color:#fff}
+.fl{display:flex;gap:8px;overflow:auto;margin-bottom:12px}.fl button{background:var(--card);border:1px solid var(--bd);white-space:nowrap;padding:10px 14px}.fl .on{border-color:#1d4ed8}
+.empty{text-align:center;padding:40px 10px}.bx{width:110px;height:110px;margin:0 auto 14px;border-radius:50%;background:#1d4ed8;display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:0 0 0 12px #2563eb22}
+.chip{display:inline-flex;gap:6px;align-items:center;padding:6px 12px;border-radius:20px;font-weight:800;font-size:13px}.chip.g{background:#dcfce7;color:#15803d}
+.bn{font-size:54px;font-weight:800;letter-spacing:-2px;line-height:1}.bn small{font-size:22px;color:var(--ac)}
+.zap{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#34d399,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:30px}
+.gold{background:linear-gradient(90deg,#fbbf24,#f59e0b);color:#1c1300;font-weight:800;padding:12px 16px;border-radius:30px;margin-bottom:10px}
+.lastr{display:flex;justify-content:space-between;align-items:center;background:var(--bg);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:10px}
+.pills{display:flex;gap:6px;flex-wrap:wrap}.pills span{background:var(--bg);border:1px solid var(--bd);border-radius:14px;padding:8px 10px;font-size:12px;color:var(--mu)}
+.wc{background:var(--card);border:2px solid #93b4ff;border-radius:28px;padding:18px;margin-bottom:12px;box-shadow:0 10px 30px #2563eb2e}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.two .b{font-size:13px;margin:0}
+.st3{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg);border:1px solid var(--bd);border-radius:18px;padding:12px 4px;text-align:center;font-size:12px;color:var(--mu)}.st3 b{display:block;font-size:22px;color:var(--tx);overflow:hidden;text-overflow:ellipsis}
+.pc{background:var(--card);border:1px solid var(--bd);border-radius:26px;padding:18px;margin-bottom:12px;box-shadow:0 10px 30px #2563eb1f}
+.av{width:84px;height:84px;border-radius:50%;background:#dbe6ff;border:6px solid #e5e9f7;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:#2563eb}
+.bc{height:56px;margin:16px 0 8px;background:repeating-linear-gradient(90deg,var(--tx) 0 2px,transparent 2px 5px,var(--tx) 5px 6px,transparent 6px 10px);opacity:.7;border-radius:3px}
+</style></head><body>
+<div id="app"></div><div id="modal" onclick="if(event.target==this)X()"><div id="mb"></div></div>
+<div id="ov"></div><div id="chip" onclick="ovShow()">⏳ Pedido en revisión</div>
+<script>
+const AD='adanreyricardo@gmail.com',K='nlx_luxe_v2';
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function def(){return{users:[],ses:null,orders:[],reviews:[],theme:'light',
+games:[{n:'Free Fire',pk:[[110,265],[341,795],[572,1325],[1166,2650],[2398,5300],[6160,13250]]}],
+cfg:{rate:305,wa1:'53975065',wa2:'53824334',group:'#',channel:'#',phone:'53975065',card:'0000 0000 0000 0000',confirm:'53975065',usdt:'TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',notices:['¡Bienvenido a NEVL LUXE!','Recargas en menos de 15 minutos.']}}}
+let S=def();
+function load(){try{const s=JSON.parse(localStorage.getItem(K));if(s)S=s}catch(e){}}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+load();
+const me=()=>S.users.find(u=>u.email==S.ses);
+const isAd=()=>me()&&(me().email==AD||me().admin);
+let tab='home',at='cli',watch=null,seen=null,P={};
+const T=(m)=>({saldo:'Saldo Móvil',banco:'Transferencia bancaria',usdt:'USDT',cred:'Créditos'}[m]);
+const ago=t=>{const m=Math.round((Date.now()-t)/60000);return m<1?'ahora':m<60?m+' min':Math.round(m/60)+' h'};
+function X(){$('#modal').style.display='none'}
+function M(h){$('#mb').innerHTML=h;$('#modal').style.display='flex'}
+function theme(){document.documentElement.dataset.theme=S.theme}
+function cp(t){navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>alert('Copiado ✅')).catch(()=>alert(t))}
+/* AUTH */
+function authView(reg){theme();$('#app').innerHTML=`<div class="auth"><div class="logo" style="font-size:26px;text-align:center;margin-bottom:14px">♛ 𝐍𝐄𝐕𝐋 𝐋𝐔𝐗𝐄 ♛</div><div class="card"><h2>${reg?'Crear cuenta':'Iniciar sesión'}</h2>
+${reg?'<input id="n" placeholder="Nombre"><input id="t" placeholder="Número (opcional)" type="tel">':''}
+<input id="e" type="email" placeholder="Correo"><input id="p" type="password" placeholder="Contraseña">
+<button class="b" onclick="${reg?'doReg()':'doLog()'}">${reg?'Crear cuenta':'Entrar'}</button>
+<button class="b g" onclick="authView(${!reg})">${reg?'Ya tengo cuenta':'Crear una cuenta'}</button></div></div>`}
+function doLog(){load();const e=$('#e').value.trim().toLowerCase(),p=$('#p').value,u=S.users.find(u=>u.email==e&&u.pass==p);
+if(!u)return alert('Correo o contraseña incorrectos');if(u.ban)return alert('Cuenta baneada');S.ses=e;save();R()}
+function doReg(){load();const n=$('#n').value.trim(),e=$('#e').value.trim().toLowerCase(),p=$('#p').value;
+if(!n||!e||p.length<4)return alert('Completa nombre, correo y contraseña (mín. 4)');if(S.users.find(u=>u.email==e))return alert('Ese correo ya existe');
+S.users.push({n,tel:$('#t').value.trim(),email:e,pass:p,cr:0,admin:e==AD,ban:false,ts:Date.now()});S.ses=e;save();R()}
+function out(){S.ses=null;save();R()}
+/* LAYOUT */
+function R(){load();if(!me())return authView();theme();
+const nv=[['home','🏠','Principal'],['orders','🧾','Pedidos'],['wallet','👛','Wallet'],['profile','👤','Perfil']];if(isAd())nv.push(['admin','🛡️','Admin']);
+$('#app').innerHTML=`<div class="top"><div class="logo">♛ 𝐍𝐄𝐕𝐋 𝐋𝐔𝐗𝐄 ♛</div><div class="ib"><button onclick="S.theme=S.theme=='dark'?'light':'dark';save();theme()">🌓</button><button onclick="go('home')">🏪</button><button onclick="notices()">🔔</button><button onclick="go('wallet')">💳</button></div></div><main id="mn"></main><nav>${nv.map(a=>`<button class="${tab==a[0]?'on':''}" onclick="go('${a[0]}')"><span>${a[1]}</span>${a[2]}</button>`).join('')}</nav>`;
+({home,orders,wallet,profile,admin})[tab]()}
+function go(t){tab=t;R();scrollTo(0,0)}
+function notices(){M(`<h2>🔔 Avisos</h2>${S.cfg.notices.map(n=>`<div class="row">${esc(n)}</div>`).join('')||'Sin avisos'}<button class="b g" onclick="X()">Cerrar</button>`)}
+/* HOME */
+function liveHtml(){const ok=S.orders.filter(o=>o.type=='recarga'&&o.status=='ok'),l=ok.sort((a,b)=>b.ts-a.ts)[0];
+return `<div class="live"><div class="dot"></div><div><b>En vivo</b><div class="mu">Recargas entregadas en total</div></div><div class="big" style="margin-left:auto">${ok.length}</div></div><div class="row mu">${l?`Última: 💎 ${l.d} ${esc(l.game)} · ID ${esc(String(l.pid).slice(0,3))}•••• · hace ${ago(l.ts)}`:'Aún no hay recargas entregadas'}</div>`}
+function home(){const c=S.cfg;$('#mn').innerHTML=`<div class="hero"><b>👑 ¡Bienvenido a NEVL LUXE!</b>Tu tienda de diamantes de confianza</div>
+<div class="msgs"><div>⚡ Recargas en menos de 15 minutos</div><div>🔒 Rápidos y seguros</div><div>💰 Los mejores precios</div></div>
+<div class="gg">${S.games.map((g,i)=>`<button class="gc" onclick="offer(${i})"><div class="im">🔥💎</div><div class="nm">Oferta ${esc(g.n)}<span>›</span></div></button>`).join('')}</div>
+<div class="card" id="lv">${liveHtml()}</div>
+<div class="card"><h2>⭐ Referencias</h2>
+<div class="stars" id="st">${[1,2,3,4,5].map(i=>`<span onclick="rate(${i})">${(P.r||0)>=i?'★':'☆'}</span>`).join('')}</div>
+<textarea id="rt" rows="2" placeholder="Escribe tu referencia"></textarea><button class="b" onclick="sendRev()">Publicar</button>
+${S.reviews.slice().reverse().slice(0,20).map(r=>`<div class="row"><div><b>${esc(r.n)}</b> <span style="color:var(--ac)">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span><div>${esc(r.t)}</div></div></div>`).join('')}</div>
+<button class="b g" onclick="help()">🤖 ¿Nesecitas ayuda?</button>
+<div class="card" style="margin-top:12px"><h3>Contacta con nuestro soporte</h3>
+<a class="b ok" target="_blank" href="https://wa.me/${c.wa1}">💬 WhatsApp 1</a><a class="b ok" target="_blank" href="https://wa.me/${c.wa2}">💬 WhatsApp 2</a>
+<h3 style="margin-top:14px">Sé parte de nuestra comunidad</h3><a class="b" target="_blank" href="${esc(c.group)}">👥 Grupo</a><a class="b" target="_blank" href="${esc(c.channel)}">📢 Canal</a></div>`}
+function rate(i){P.r=i;[...document.querySelectorAll('#st span')].forEach((s,k)=>s.textContent=k<i?'★':'☆')}
+function sendRev(){const t=$('#rt').value.trim();if(!P.r||!t)return alert('Pon estrellas y un texto');S.reviews.push({n:me().n,s:P.r,t,ts:Date.now()});P.r=0;save();R()}
+function help(){M(`<div class="bot">🤖</div><h2 style="text-align:center">Hablar con Roxi</h2><p class="mu" style="text-align:center">Asistente IA de la web</p><div class="chat" id="ch"><div class="rx">¡Hola! Soy Roxi 🤖 ¿En qué te ayudo?</div></div><input id="q" placeholder="Escribe tu pregunta" onkeydown="if(event.key=='Enter')ask()"><button class="b" onclick="ask()">Enviar</button>`)}
+function ask(){const q=$('#q').value.trim();if(!q)return;const l=q.toLowerCase();let a='Para eso te recomiendo hablar con nuestro soporte por WhatsApp 💬';
+if(/tard|demora|cuanto|tiempo|minut/.test(l))a='Las recargas llegan en menos de 15 minutos ⚡';
+else if(/precio|cuesta|vale|oferta/.test(l))a='Toca la oferta de Free Fire en Principal y verás todos los paquetes 💎';
+else if(/pag|metodo|saldo|usdt|transfer/.test(l))a='Aceptamos Saldo Móvil, Transferencia, USDT y Créditos NLX 💳';
+else if(/credit|nlx|wallet/.test(l))a=`En Wallet puedes depositar créditos NLX. 1 NLX = ${S.cfg.rate} de saldo 👛`;
+else if(/id|jugador/.test(l))a='Tu ID de jugador está en tu perfil dentro de Free Fire 🎮';
+else if(/hola|buenas/.test(l))a='¡Hola! 👋 ¿Qué recarga necesitas?';
+const c=$('#ch');c.innerHTML+=`<div class="me">${esc(q)}</div><div class="rx">${a}</div>`;$('#q').value='';c.scrollTop=1e5}
+/* OFFER FLOW */
+function offer(g){P.g=g;M(`<h2>🔥 ${esc(S.games[g].n)}</h2>${S.games[g].pk.map((p,i)=>`<button class="pk" onclick="pick(${i})"><span>💎 ${p[0]} 💎</span><span>${p[1]} Saldo Móvil 📱</span></button>`).join('')}`)}
+function pick(i){P.pi=i;const p=S.games[P.g].pk[i];M(`<h2>💎 ${p[0]} — ${p[1]} Saldo</h2><label class="mu">ID del jugador</label><input id="pid" inputmode="numeric" placeholder="Ej: 123456789"><button class="b" onclick="sendId()">Enviar</button>`)}
+function sendId(){const v=$('#pid').value.trim();if(v.length<5)return alert('Pon un ID válido');const p=S.games[P.g].pk[P.pi];
+P.ctx={type:'recarga',game:S.games[P.g].n,d:p[0],price:p[1],cr:+(p[1]/S.cfg.rate).toFixed(2),pid:v,cred:true};payStep()}
+function payStep(){const x=P.ctx;P.m=null;M(`<h2>Método de pago</h2><div class="mu">${x.type=='recarga'?`💎 ${x.d} · ID ${esc(x.pid)}`:`Depósito de ${x.cr} NLX`}</div><div class="pms" style="margin-top:10px"><button onclick="setM('saldo',this)">📱 Saldo Móvil</button><button onclick="setM('banco',this)">🏦 Transferencia</button><button onclick="setM('usdt',this)">💵 USDT</button>${x.cred?'<button onclick="setM(\'cred\',this)">👑 Créditos</button>':''}</div><div id="pd"></div>`)}
+function cpb(t){return `<button class="b sm" onclick="cp('${esc(t)}')">📋 Copiar</button>`}
+function setM(m,el){P.m=m;document.querySelectorAll('.pms button').forEach(b=>b.classList.remove('on'));el.classList.add('on');const x=P.ctx,c=S.cfg;let h='';
+if(m=='saldo')h=`<div class="row"><span>Teléfono a enviar:<br><b>${esc(c.phone)}</b></span>${cpb(c.phone)}</div><div class="row"><span>Monto exacto:</span><b>${x.price} Saldo</b></div><input id="fr" placeholder="Número desde donde envías"><label class="mu">Captura de la transferencia</label><input id="fl" type="file" accept="image/*">`;
+if(m=='banco')h=`<div class="row"><span>Tarjeta a transferir:<br><b>${esc(c.card)}</b></span>${cpb(c.card)}</div><div class="row"><span>Móvil a confirmar:<br><b>${esc(c.confirm)}</b></span>${cpb(c.confirm)}</div><div class="row"><span>Monto exacto:</span><b>${x.price}</b></div><input id="fr" placeholder="Número desde donde envías"><label class="mu">Captura de la transferencia</label><input id="fl" type="file" accept="image/*">`;
+if(m=='usdt')h=`<div class="row"><span>Dirección USDT (TRC20):<br><b style="word-break:break-all">${esc(c.usdt)}</b></span>${cpb(c.usdt)}</div><div class="row"><span>Monto exacto:</span><b>${x.cr} USDT</b></div><input id="hs" placeholder="HASH de la transferencia">`;
+if(m=='cred'){const ok=me().cr>=x.cr;h=`<div class="row"><span>Tu saldo</span><b>${me().cr} NLX</b></div><div class="row"><span>Precio (igual que USDT)</span><b>${x.cr} NLX</b></div>${ok?'':'<p style="color:var(--no)">No tienes créditos suficientes. Deposita en Wallet.</p>'}`}
+$('#pd').innerHTML=h+`<button class="b" onclick="submitPay()">Enviar a revisión</button>`}
+function submitPay(){load();const x=P.ctx,m=P.m,u=me();if(!m)return alert('Elige un método de pago');
+let o={id:Date.now().toString(36),email:u.email,name:u.n,type:x.type,game:x.game||'',d:x.d||0,price:x.price,cr:x.cr,method:m,pid:x.pid||'',status:'p',ts:Date.now()};
+if(m=='saldo'||m=='banco'){o.from=$('#fr').value.trim();const f=$('#fl').files[0];if(!o.from||!f)return alert('Pon tu número y la captura');o.proof=f.name}
+if(m=='usdt'){o.hash=$('#hs').value.trim();if(!o.hash)return alert('Pon el HASH')}
+if(m=='cred'){if(u.cr<x.cr)return alert('Créditos insuficientes');u.cr=+(u.cr-x.cr).toFixed(2)}
+S.orders.push(o);save();X();watch=o.id;seen=null;ovShow();R()}
+/* OVERLAY */
+function ovShow(){const o=S.orders.find(o=>o.id==watch);if(!o)return;seen=o.status;const v=$('#ov');v.style.display='flex';$('#chip').style.display='none';
+const sm=`<div class="sum"><div>📦 ${o.type=='recarga'?`${esc(o.game)} 💎 ${o.d}`:'Depósito de créditos'}</div><div>💰 ${o.method=='usdt'||o.method=='cred'?o.cr+(o.method=='usdt'?' USDT':' NLX'):o.price+' Saldo'}</div><div>💳 ${T(o.method)}</div>${o.pid?`<div>🎮 ID: ${esc(o.pid)}</div>`:''}<div>🧾 #${o.id}</div></div>`;
+const st={p:['<div class="ring"></div>','Procesando tu pedido…','Un administrador lo está revisando ⏳'],ok:['<div class="res" style="background:var(--ok);--c:#22c55e">✔</div>','¡Pedido aceptado! 🎉','Tu recarga fue entregada con éxito'],no:['<div class="res" style="background:var(--no);--c:#ef4444">✖</div>','Pedido rechazado','Contacta con soporte si crees que es un error']}[o.status];
+v.style.background=o.status=='ok'?'radial-gradient(circle at 50% 30%,#064e2b,#04100a)':o.status=='no'?'radial-gradient(circle at 50% 30%,#5b0f0f,#100404)':'';
+v.innerHTML=st[0]+`<h1 style="font-size:24px">${st[1]}</h1><p style="opacity:.8">${st[2]}</p>${sm}<button class="b" style="max-width:300px" onclick="ovMin()">${o.status=='p'?'Minimizar':'Cerrar'}</button>`}
+function ovMin(){$('#ov').style.display='none';const o=S.orders.find(o=>o.id==watch);if(o&&o.status=='p')$('#chip').style.display='block';else watch=null}
+/* ORDERS */
+function badge(s){return `<span class="tag t-${s}">${{p:'En revisión',ok:'Aceptado',no:'Rechazado'}[s]}</span>`}
+function orderRow(o,adm){return `<div class="card" style="margin-bottom:8px"><div class="row" style="border:0"><b>${o.type=='recarga'?`💎 ${o.d} ${esc(o.game)}`:`👛 Depósito ${o.cr} NLX`}</b>${badge(o.status)}</div><div class="mu">${T(o.method)} · ${o.price} saldo / ${o.cr} NLX · ${ago(o.ts)}${o.pid?' · ID '+esc(o.pid):''}${adm?'<br>'+esc(o.name)+' · '+esc(o.email):''}${o.from?'<br>Desde: '+esc(o.from):''}${o.proof?'<br>Captura: '+esc(o.proof):''}${o.hash?'<br>Hash: '+esc(o.hash):''}</div>${adm&&o.status=='p'?`<button class="b ok sm" onclick="decide('${o.id}','ok')">Aceptar</button><button class="b no sm" onclick="decide('${o.id}','no')">Rechazar</button>`:''}</div>`}
+function orders(){const l=S.orders.filter(o=>o.email==S.ses).sort((a,b)=>b.ts-a.ts);$('#mn').innerHTML=`<h2>🧾 Mis pedidos</h2>${l.map(o=>`<div onclick="watch='${o.id}';ovShow()">${orderRow(o)}</div>`).join('')||'<p class="mu">Aún no tienes pedidos.</p>'}`}
+function decide(id,s){load();const o=S.orders.find(o=>o.id==id);if(!o||o.status!='p')return;o.status=s;const u=S.users.find(u=>u.email==o.email);
+if(s=='ok'&&o.type=='deposito'&&u)u.cr=+(u.cr+o.cr).toFixed(2);if(s=='no'&&o.method=='cred'&&u)u.cr=+(u.cr+o.cr).toFixed(2);save();R()}
+/* WALLET */
+function wallet(){const u=me(),dep=S.orders.filter(o=>o.email==u.email&&o.type=='deposito').sort((a,b)=>b.ts-a.ts).slice(0,10);
+$('#mn').innerHTML=`<div class="hero"><svg width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde047"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs><circle cx="32" cy="32" r="29" fill="url(#gg)" stroke="#fff" stroke-width="3"/><circle cx="32" cy="32" r="22" fill="none" stroke="#fff8" stroke-width="2"/><path d="M18 42V22l6 8 8-12 8 12 6-8v20z" fill="#fff"/></svg><div class="mu" style="color:#fff">Tus créditos</div><b style="font-size:34px">${u.cr} NLX</b></div>
+<div class="card"><h2>➕ Añadir créditos</h2><p class="mu">Mínimo 1 · 1 NLX = ${S.cfg.rate} Saldo</p><input id="am" type="number" min="1" step="1" value="1" oninput="$('#tt').textContent=(Math.max(1,+this.value||1)*${S.cfg.rate})+' Saldo'"><div class="row"><span>Total a pagar</span><b id="tt">${S.cfg.rate} Saldo</b></div><button class="b" onclick="dep()">Depositar</button></div>
+<div class="card"><h2>📤 Enviar créditos</h2><input id="se" type="email" placeholder="Correo del destinatario"><input id="sa" type="number" min="1" placeholder="Cantidad"><button class="b" onclick="sendCr()">Enviar créditos</button></div>
+<div class="card"><h2>Últimos depósitos</h2>${dep.map(o=>`<div class="row"><span>+${o.cr} NLX<div class="mu">${T(o.method)} · ${ago(o.ts)}</div></span>${badge(o.status)}</div>`).join('')||'<p class="mu">Sin depósitos</p>'}</div>`}
+function dep(){const n=Math.floor(+$('#am').value);if(!(n>=1))return alert('Mínimo 1');P.ctx={type:'deposito',price:n*S.cfg.rate,cr:n,cred:false};payStep()}
+function sendCr(){load();const e=$('#se').value.trim().toLowerCase(),a=+$('#sa').value,u=me(),t=S.users.find(x=>x.email==e);
+if(!t||t.email==u.email)return alert('Correo no válido');if(!(a>0)||a>u.cr)return alert('Cantidad inválida o créditos insuficientes');
+u.cr=+(u.cr-a).toFixed(2);t.cr=+(t.cr+a).toFixed(2);save();alert('Enviaste '+a+' NLX a '+t.n+' ✅');R()}
+/* PROFILE */
+function profile(){const u=me(),n=S.orders.filter(o=>o.email==u.email).length;$('#mn').innerHTML=`<div class="card" style="text-align:center"><div style="width:84px;height:84px;margin:auto;border-radius:50%;background:linear-gradient(135deg,var(--ac2),#ec4899);display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:800;color:#fff">${esc(u.n[0].toUpperCase())}</div><h2 style="margin-top:10px">${esc(u.n)}</h2><div class="mu">${esc(u.email)}</div>${isAd()?'<span class="tag t-ok">ADMIN</span>':''}</div>
+<div class="card"><div class="row"><span>📱 Teléfono</span><b>${esc(u.tel||'—')}</b></div><div class="row"><span>👛 Créditos</span><b>${u.cr} NLX</b></div><div class="row"><span>🧾 Pedidos</span><b>${n}</b></div><div class="row"><span>📅 Miembro desde</span><b>${new Date(u.ts).toLocaleDateString()}</b></div></div><button class="b no" onclick="out()">Cerrar sesión</button>`}
+/* ADMIN */
+function admin(){if(!isAd())return go('home');const tabs=[['cli','Clientes'],['off','Ofertas'],['ped','Pedidos'],['aj','Ajustes']];let h=`<div style="display:flex;gap:6px;margin-bottom:10px;overflow:auto">${tabs.map(t=>`<button class="b sm ${at==t[0]?'':'g'}" onclick="at='${t[0]}';R()">${t[1]}</button>`).join('')}</div>`;
+if(at=='cli')h+=S.users.map((u,i)=>`<div class="card"><b>${esc(u.n)}</b> ${u.admin||u.email==AD?'<span class="tag t-ok">ADMIN</span>':''}${u.ban?'<span class="tag t-no">BAN</span>':''}<div class="mu">${esc(u.email)} · ${esc(u.tel||'—')} · ${u.cr} NLX</div>${u.email!=AD?`<button class="b sm no" onclick="uf(${i},'ban')">${u.ban?'Desbanear':'Banear'}</button><button class="b sm" onclick="uf(${i},'admin')">${u.admin?'Quitar admin':'Poner admin'}</button>`:''}<button class="b sm g" onclick="addCr(${i})">± Créditos</button></div>`).join('');
+if(at=='off')h+=S.games.map((g,i)=>`<div class="card"><input id="gn${i}" value="${esc(g.n)}"><label class="mu">Paquetes (diamantes,precio por línea)</label><textarea id="gp${i}" rows="7">${g.pk.map(p=>p.join(',')).join('\n')}</textarea><button class="b sm" onclick="svG(${i})">Guardar</button><button class="b sm no" onclick="S.games.splice(${i},1);save();R()">Eliminar</button></div>`).join('')+`<button class="b" onclick="S.games.push({n:'Nuevo juego',pk:[[100,200]]});save();R()">➕ Añadir juego</button>`;
+if(at=='ped')h+=S.orders.slice().sort((a,b)=>b.ts-a.ts).map(o=>orderRow(o,1)).join('')||'<p class="mu">Sin pedidos</p>';
+if(at=='aj'){const c=S.cfg,f=(k,l)=>`<label class="mu">${l}</label><input id="c_${k}" value="${esc(c[k])}">`;h+=`<div class="card">${f('wa1','WhatsApp soporte 1')}${f('wa2','WhatsApp soporte 2')}${f('group','Link del grupo')}${f('channel','Link del canal')}${f('rate','Saldo por 1 crédito NLX')}${f('phone','Teléfono para Saldo Móvil')}${f('card','Tarjeta')}${f('confirm','Móvil a confirmar')}${f('usdt','Dirección USDT')}<label class="mu">Avisos (uno por línea)</label><textarea id="c_n" rows="4">${esc(c.notices.join('\n'))}</textarea><button class="b" onclick="svC()">Guardar ajustes</button></div>`}
+$('#mn').innerHTML=h}
+function uf(i,k){load();const u=S.users[i];u[k]=!u[k];save();R()}
+function addCr(i){const a=+prompt('Créditos a sumar (negativo para restar):','0');if(!a)return;load();S.users[i].cr=+(S.users[i].cr+a).toFixed(2);save();R()}
+function svG(i){const g=S.games[i];g.n=$('#gn'+i).value.trim()||g.n;g.pk=$('#gp'+i).value.split('\n').map(l=>l.split(',').map(Number)).filter(p=>p[0]>0&&p[1]>0);save();alert('Guardado ✅')}
+function svC(){const c=S.cfg;['wa1','wa2','group','channel','phone','card','confirm','usdt'].forEach(k=>c[k]=$('#c_'+k).value.trim());c.rate=+$('#c_rate').value||305;c.notices=$('#c_n').value.split('\n').filter(Boolean);save();alert('Guardado ✅')}
+/* RESTYLE */
+let ot='recarga',ofl='all';
+function liveHtml(){const ok=S.orders.filter(o=>o.type=='recarga'&&o.status=='ok').sort((a,b)=>b.ts-a.ts),l=ok[0],hoy=ok.filter(o=>Date.now()-o.ts<864e5).length;
+return `<div style="display:flex;justify-content:space-between"><span class="chip g"><i class="dot"></i> EN VIVO</span><span class="chip g">+${hoy} hoy</span></div><div class="live" style="margin:14px 0"><div class="zap">⚡</div><div><div class="bn">${ok.length}</div><div class="mu" style="font-size:16px">recargas entregadas</div></div></div><div class="gold">❤️ ¡Gracias por confiar en NEVL LUXE!</div><div class="lastr">${l?`<div><b>${l.d} Diamantes</b><div class="mu">${esc(l.game)} · ID ${esc(String(l.pid).slice(0,3))}•••• · hace ${ago(l.ts)}</div></div><span class="tag t-ok">✔ Entregada</span>`:'<span class="mu">Aún no hay recargas entregadas</span>'}</div><div class="pills"><span>⚡ Llega en menos de 15 min</span><span>🛡️ Pago seguro</span><span>🕒 24 horas</span></div>`}
+function offer(g){P.g=g;M(`<h2>🔥 ${esc(S.games[g].n)}</h2><div class="pks">${S.games[g].pk.map((p,i)=>`<button class="pk" onclick="pick(${i})"><b>${p[0]}</b>Diamantes<i>${p[1]} saldo</i></button>`).join('')}</div>`)}
+function orders(){const l=S.orders.filter(o=>o.email==S.ses&&(ot=='recarga'?o.type=='recarga':o.type=='deposito')&&(ofl=='all'||o.status==ofl)).sort((a,b)=>b.ts-a.ts);
+$('#mn').innerHTML=`<div class="ph"><div class="pt">Mis órdenes</div><div class="seg"><button class="${ot=='recarga'?'on':''}" onclick="ot='recarga';R()">Compras</button><button class="${ot!='recarga'?'on':''}" onclick="ot='dep';R()">Depósitos</button></div></div><div class="fl">${[['all','Todas'],['ok','✔ Completadas'],['p','🕒 Pendientes'],['no','✖ Rechazadas']].map(f=>`<button class="${ofl==f[0]?'on':''}" onclick="ofl='${f[0]}';R()">${f[1]}</button>`).join('')}</div>${l.map(o=>`<div onclick="watch='${o.id}';ovShow()">${orderRow(o)}</div>`).join('')||`<div class="empty"><div class="bx">📦</div><h2>Todavía no hay órdenes</h2><p class="mu">Cuando hagas tu primera recarga aparecerá aquí.</p><button class="b" style="width:auto;display:inline-block;padding:12px 30px" onclick="go('home')">Ver juegos</button></div>`}`}
+function wallet(){const u=me(),mine=S.orders.filter(o=>o.email==u.email),dep=mine.filter(o=>o.type=='deposito').sort((a,b)=>b.ts-a.ts).slice(0,10),ent=dep.filter(o=>o.status=='ok').reduce((s,o)=>s+o.cr,0),gas=mine.filter(o=>o.type=='recarga'&&o.method=='cred'&&o.status!='no').reduce((s,o)=>s+o.cr,0);
+$('#mn').innerHTML=`<div class="ph"><div><div class="pt">Mi Wallet</div><div class="mu">Tu saldo y tus movimientos.</div></div></div>
+<div class="wc"><div style="display:flex;justify-content:space-between;align-items:center"><span class="chip g">✔ Saldo disponible</span><span class="mu">1 NLX = ${S.cfg.rate} saldo</span></div><div style="display:flex;align-items:center;justify-content:space-between;margin:14px 0"><div class="bn">${u.cr} <small>NLX</small></div><svg width="92" height="92" viewBox="0 0 64 64"><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient></defs><polygon points="32,3 58,18 58,46 32,61 6,46 6,18" fill="url(#hg)" stroke="#bfdbfe" stroke-width="3"/><path d="M17 43V23l7 8 8-12 8 12 7-8v20z" fill="#fde047"/></svg></div><div class="two"><button class="b" onclick="$('#dp').scrollIntoView({behavior:'smooth'})">⊕ Añadir NLX</button><button class="b g" onclick="go('home')">🛍️ Usar en recargas</button></div><div class="st3" style="margin-top:12px"><div><b>${ent}</b>Entró</div><div><b>${gas}</b>Gastado</div><div><b>${mine.length}</b>Movimientos</div></div></div>
+<div class="card" id="dp"><h2>➕ Añadir créditos</h2><p class="mu">Mínimo 1 · 1 NLX = ${S.cfg.rate} Saldo</p><input id="am" type="number" min="1" step="1" value="1" oninput="$('#tt').textContent=(Math.max(1,+this.value||1)*${S.cfg.rate})+' Saldo'"><div class="row"><span>Total a pagar</span><b id="tt">${S.cfg.rate} Saldo</b></div><button class="b" onclick="dep()">Depositar</button></div>
+<div class="card"><h2>📤 Enviar créditos</h2><input id="se" type="email" placeholder="Correo del destinatario"><input id="sa" type="number" min="1" placeholder="Cantidad"><button class="b" onclick="sendCr()">Enviar créditos</button></div>
+<div class="card"><h2>Últimos depósitos</h2>${dep.map(o=>`<div class="row"><span>+${o.cr} NLX<div class="mu">${T(o.method)} · ${ago(o.ts)}</div></span>${badge(o.status)}</div>`).join('')||'<p class="mu">Todavía no tienes movimientos</p>'}</div>`}
+function profile(){const u=me(),n=S.orders.filter(o=>o.email==u.email&&o.type=='recarga'&&o.status=='ok').length;
+$('#mn').innerHTML=`<div class="ph"><div><div class="pt">Mi perfil</div><div class="mu">Tu cuenta, siempre contigo.</div></div></div><div class="pc"><div style="font-weight:800;letter-spacing:1px">♛ NEVL LUXE<br><span style="color:var(--ac);font-size:12px;letter-spacing:3px">ID DE JUGADOR</span></div><div style="display:flex;gap:14px;align-items:center;margin:16px 0"><div class="av">${esc(u.n[0].toUpperCase())}</div><div style="min-width:0"><div style="font-size:26px;font-weight:800;word-break:break-word">${esc(u.n.toUpperCase())}</div><div class="mu" style="word-break:break-all">${esc(u.email)}</div><span class="chip g">✔ Verificado</span>${isAd()?' <span class="chip g">ADMIN</span>':''}</div></div><div class="st3"><div><b>${n}</b>Recargas</div><div><b>${u.cr}</b>Saldo NLX</div><div><b>${esc(u.tel||'—')}</b>Teléfono</div></div><div class="bc"></div><div class="mu" style="text-align:right;font-weight:800;letter-spacing:3px">#${esc(u.ts.toString(36).toUpperCase().slice(-6))}</div></div><button class="b no" onclick="out()">Cerrar sesión</button>`}
+/* LIVE POLL */
+setInterval(()=>{load();const l=$('#lv');if(l)l.innerHTML=liveHtml();const o=S.orders.find(o=>o.id==watch);if(o&&o.status!=seen){ovShow()}},2000);
+R();
+</script></body></html>
