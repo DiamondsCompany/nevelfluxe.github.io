@@ -78,7 +78,64 @@ nav button{border-radius:24px;padding:8px 2px}nav .on{color:#fff;background:line
 .pc{background:var(--card);border:1px solid var(--bd);border-radius:26px;padding:18px;margin-bottom:12px;box-shadow:0 10px 30px #2563eb1f}
 .av{width:84px;height:84px;border-radius:50%;background:#dbe6ff;border:6px solid #e5e9f7;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:#2563eb}
 .bc{height:56px;margin:16px 0 8px;background:repeating-linear-gradient(90deg,var(--tx) 0 2px,transparent 2px 5px,var(--tx) 5px 6px,transparent 6px 10px);opacity:.7;border-radius:3px}
+.ic{width:1.2em;height:1.2em;vertical-align:-.25em;display:inline-block;filter:drop-shadow(0 2px 3px #1e3a8a55)}
+.ic-gem,.ic-crown,.ic-bot{animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-9%) rotate(4deg)}}
+.sp{animation:tw 1.8s infinite;transform-box:fill-box;transform-origin:center}@keyframes tw{50%{opacity:.1;transform:scale(.4)}}
+.ic-bolt{animation:zp 1.4s infinite}@keyframes zp{50%{transform:scale(1.15);filter:drop-shadow(0 0 7px #fbbf24)}}
+.ic-bell{animation:rg 3s infinite;transform-origin:50% 10%}@keyframes rg{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(15deg)}90%{transform:rotate(-12deg)}95%{transform:rotate(7deg)}}
+.ic-flame{animation:fl2 .9s ease-in-out infinite alternate;transform-origin:50% 100%}@keyframes fl2{to{transform:scale(1.14,1.2)}}
+.ic-star,.ic-heart{animation:pu2 1.6s infinite}@keyframes pu2{50%{transform:scale(1.18)}}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 15% 10%,#60a5fa55,transparent 40%),radial-gradient(circle at 90% 35%,#a78bfa55,transparent 40%),radial-gradient(circle at 50% 95%,#22d3ee44,transparent 45%);animation:au 12s ease-in-out infinite alternate}@keyframes au{to{transform:scale(1.3) rotate(5deg)}}
+#fx span{position:fixed;bottom:-20px;border-radius:50%;background:#fff;box-shadow:0 0 10px 3px #60a5fa;opacity:0;z-index:-1;animation:rise linear infinite}@keyframes rise{10%{opacity:.9}to{transform:translateY(-110vh);opacity:0}}
+.b{position:relative;overflow:hidden}.b:after{content:"";position:absolute;top:0;left:-60%;width:35%;height:100%;background:linear-gradient(90deg,transparent,#fff7,transparent);transform:skewX(-20deg);animation:shn 3.5s infinite}@keyframes shn{55%,100%{left:140%}}
+.hero{position:relative;overflow:hidden;padding-right:135px;min-height:140px}.hero:before{content:"";position:absolute;inset:-60%;background:conic-gradient(from 0deg,transparent,#ffffff2e,transparent 28%);animation:sp 9s linear infinite}.hero b{position:relative}
+.hg{position:absolute;right:8px;top:50%;width:118px;height:118px;margin-top:-59px;animation:bob 3.5s ease-in-out infinite;filter:drop-shadow(0 0 22px #67e8f9)}
+.gc{transition:transform .2s}.gc:active{transform:scale(.96)}
+.gc .im{position:relative;overflow:hidden;gap:2px;background:radial-gradient(circle at 70% 25%,#fde68a,transparent 38%),linear-gradient(135deg,#ff7a18,#c2185b 55%,#312e81)}.gc .im .ic{width:66px;height:66px;filter:drop-shadow(0 6px 10px #0006)}.gc .im:after{content:"";position:absolute;top:0;left:-60%;width:30%;height:100%;background:linear-gradient(90deg,transparent,#fff5,transparent);transform:skewX(-20deg);animation:shn 4s infinite}
+.pk .ic{width:1.1em}.zap .ic{width:38px;height:38px}.bx .ic{width:64px;height:64px}
+nav .on .ic{filter:brightness(1.35) drop-shadow(0 0 5px #fff9)}
+.ring:after{content:none}.ring .ic{position:absolute;inset:0;margin:auto;width:62px;height:62px;animation:sp 1s linear infinite reverse}
+.res{background:none!important}.res .ic{width:100%;height:100%;filter:none}
 </style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cffafe"/><stop offset=".5" stop-color="#38bdf8"/><stop offset="1" stop-color="#4f46e5"/></linearGradient>
+<linearGradient id="gB2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#312e81"/></linearGradient>
+<linearGradient id="gO" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fef08a"/><stop offset=".5" stop-color="#f59e0b"/><stop offset="1" stop-color="#b45309"/></linearGradient>
+<linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#dc2626"/></linearGradient>
+<linearGradient id="gG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86efac"/><stop offset="1" stop-color="#15803d"/></linearGradient>
+<linearGradient id="gU" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient>
+<linearGradient id="gP" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9d5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+<symbol id="i-gem" viewBox="0 0 32 32"><path d="M8 4h16l6 8-14 17L2 12z" fill="url(#gB)"/><path d="M2 12h28L16 29z" fill="url(#gB2)"/><path d="M8 4l-2 8h6zM24 4l2 8h-6zM12 12l4-8 4 8z" fill="#fff" opacity=".4"/><path d="M12 12l4 17 4-17z" fill="#1e1b8a" opacity=".3"/><path d="M8 4h16l6 8-14 17L2 12z" fill="none" stroke="#e0f2fe" stroke-linejoin="round"/><path class="sp" d="M26 2v5M23.500 4.500h5" stroke="#fff" stroke-width="1.600" stroke-linecap="round"/></symbol>
+<symbol id="i-crown" viewBox="0 0 32 32"><path d="M3 24 2 10l7 6 7-11 7 11 7-6-1 14z" fill="url(#gO)" stroke="#fffbeb" stroke-width=".8"/><rect x="3" y="25" width="26" height="4" rx="1.500" fill="url(#gO)"/><circle cx="16" cy="19" r="2.200" fill="#ef4444"/><circle cx="9" cy="21" r="1.400" fill="#38bdf8"/><circle cx="23" cy="21" r="1.400" fill="#38bdf8"/><path class="sp" d="M16 .5v4M14 2.500h4" stroke="#fff" stroke-width="1.400" stroke-linecap="round"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 32 32"><path d="M18 1 5 18h8l-2 13 14-19h-8z" fill="url(#gO)" stroke="#fff8" stroke-linejoin="round"/></symbol>
+<symbol id="i-shield" viewBox="0 0 32 32"><path d="M16 2 4 7v8c0 8 5 13 12 15 7-2 12-7 12-15V7z" fill="url(#gU)" stroke="#dbeafe"/><path d="m10 16 4 4 8-9" stroke="#fff" stroke-width="2.600" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-clock" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="url(#gU)"/><circle cx="16" cy="16" r="10.500" fill="#fff"/><path d="M16 9v7l5 3" stroke="#1d4ed8" stroke-width="2.200" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-home" viewBox="0 0 32 32"><path d="M16 3 2 15h4v13h20V15h4z" fill="url(#gU)"/><path d="M16 3 2 15h4l10-9 10 9h4z" fill="url(#gO)"/><rect x="13" y="19" width="6" height="9" rx="1" fill="#fff"/></symbol>
+<symbol id="i-rec" viewBox="0 0 32 32"><path d="M7 2h18v28l-3-2-3 2-3-2-3 2-3-2-3 2z" fill="#fff" stroke="url(#gU)" stroke-width="2"/><path d="M11 9h10M11 14h10M11 19h6" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 32 32"><rect x="2" y="7" width="28" height="21" rx="4" fill="url(#gU)"/><path d="M2 12V9a3 3 0 0 1 3-3h18" stroke="#fde68a" stroke-width="2" fill="none"/><rect x="19" y="14" width="11" height="7" rx="3" fill="url(#gO)"/><circle cx="23" cy="17.500" r="1.300" fill="#fff"/></symbol>
+<symbol id="i-user" viewBox="0 0 32 32"><circle cx="16" cy="10" r="6.500" fill="url(#gP)"/><path d="M3 30c0-8 6-12 13-12s13 4 13 12z" fill="url(#gU)"/></symbol>
+<symbol id="i-shop" viewBox="0 0 32 32"><path d="M3 12 6 3h20l3 9z" fill="url(#gO)"/><path d="M3 12c0 3 2 4 4 4s4-1 4-4c0 3 2 4 5 4s5-1 5-4c0 3 2 4 4 4s4-1 4-4z" fill="url(#gR)"/><rect x="5" y="17" width="22" height="12" fill="url(#gU)"/><rect x="13" y="21" width="6" height="8" fill="#fff"/></symbol>
+<symbol id="i-bell" viewBox="0 0 32 32"><path d="M16 3a8 8 0 0 0-8 8v7l-3 5h22l-3-5v-7a8 8 0 0 0-8-8z" fill="url(#gO)"/><path d="M12 26a4 4 0 0 0 8 0z" fill="#b45309"/></symbol>
+<symbol id="i-card" viewBox="0 0 32 32"><rect x="2" y="6" width="28" height="20" rx="3.500" fill="url(#gU)"/><rect x="2" y="10" width="28" height="4" fill="#0b1a5c"/><rect x="6" y="19" width="9" height="3" rx="1.500" fill="url(#gO)"/></symbol>
+<symbol id="i-theme" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="url(#gO)"/><path d="M16 4a12 12 0 0 0 0 24z" fill="#312e81"/><circle cx="10" cy="12" r="1.200" fill="#fff"/><circle cx="11" cy="20" r="1" fill="#fff"/></symbol>
+<symbol id="i-flame" viewBox="0 0 32 32"><path d="M16 2c1 6 9 9 9 18a9 9 0 0 1-18 0c0-4 2-6 3-8 1 3 2 4 4 4-1-5-1-9 2-14z" fill="url(#gR)"/><path d="M16 14c3 4 5 5 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4 1 2 2 2 3 1z" fill="url(#gO)"/></symbol>
+<symbol id="i-box" viewBox="0 0 32 32"><path d="M16 2 4 8v16l12 6 12-6V8z" fill="url(#gU)"/><path d="M16 2 4 8l12 6 12-6z" fill="#93c5fd"/><path d="M16 14v16" stroke="#fff6" stroke-width="1.500"/></symbol>
+<symbol id="i-check" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="url(#gG)"/><path d="m9 16.500 5 5 9-11" stroke="#fff" stroke-width="3.200" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-x" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="url(#gR)"/><path d="m10 10 12 12m0-12L10 22" stroke="#fff" stroke-width="3.200" stroke-linecap="round"/></symbol>
+<symbol id="i-heart" viewBox="0 0 32 32"><path d="M16 29C5 21 2 15 2 10a7 7 0 0 1 14-2 7 7 0 0 1 14 2c0 5-3 11-14 19z" fill="url(#gR)"/><path d="M7 10a4 4 0 0 1 4-4" stroke="#fff9" stroke-width="2" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-phone" viewBox="0 0 32 32"><rect x="8" y="2" width="16" height="28" rx="4" fill="url(#gU)"/><rect x="10.500" y="6" width="11" height="17" rx="1.500" fill="#bfdbfe"/><circle cx="16" cy="26.500" r="1.400" fill="#fff"/></symbol>
+<symbol id="i-bank" viewBox="0 0 32 32"><path d="M16 2 2 10h28z" fill="url(#gO)"/><path d="M5 12h4v12H5zM14 12h4v12h-4zM23 12h4v12h-4z" fill="url(#gU)"/><rect x="2" y="25" width="28" height="4" rx="1" fill="url(#gO)"/></symbol>
+<symbol id="i-coin" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="url(#gG)" stroke="#bbf7d0" stroke-width="1.500"/><path d="M9 10h14M16 10v14" stroke="#fff" stroke-width="3" stroke-linecap="round"/></symbol>
+<symbol id="i-bot" viewBox="0 0 32 32"><rect x="5" y="9" width="22" height="17" rx="6" fill="url(#gU)"/><path d="M16 9V5" stroke="#60a5fa" stroke-width="2"/><circle cx="16" cy="4" r="2.200" fill="url(#gO)"/><circle cx="12" cy="17" r="3" fill="#e0f2fe"/><circle cx="20" cy="17" r="3" fill="#e0f2fe"/><circle cx="12" cy="17" r="1.300" fill="#0b1a5c"/><circle cx="20" cy="17" r="1.300" fill="#0b1a5c"/><path d="M12 22h8" stroke="#e0f2fe" stroke-width="1.600" stroke-linecap="round"/></symbol>
+<symbol id="i-chat" viewBox="0 0 32 32"><path d="M4 5h24a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H15l-7 6v-6H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" fill="url(#gG)"/><path d="M8 11h16M8 16h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-group" viewBox="0 0 32 32"><circle cx="11" cy="10" r="5" fill="url(#gP)"/><circle cx="22" cy="11" r="4" fill="url(#gB)"/><path d="M1 28c0-7 4-10 10-10s10 3 10 10zM20 20c6 0 11 2 11 8h-8c0-3-1-6-3-8z" fill="url(#gU)"/></symbol>
+<symbol id="i-mega" viewBox="0 0 32 32"><path d="M3 12h6l14-8v24L9 20H3z" fill="url(#gO)"/><path d="M9 20l3 9h4l-3-8z" fill="url(#gU)"/><path d="M26 10c3 3 3 9 0 12" stroke="#f59e0b" stroke-width="2.500" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-send" viewBox="0 0 32 32"><path d="M2 15 30 3 22 29l-7-9z" fill="url(#gU)"/><path d="m15 20 15-17-19 14z" fill="#bfdbfe"/></symbol>
+<symbol id="i-plus" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="url(#gU)"/><path d="M16 9v14M9 16h14" stroke="#fff" stroke-width="3.200" stroke-linecap="round"/></symbol>
+<symbol id="i-bag" viewBox="0 0 32 32"><path d="M5 10h22l2 19H3z" fill="url(#gP)"/><path d="M11 14V9a5 5 0 0 1 10 0v5" stroke="#4c1d95" stroke-width="2.500" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-copy" viewBox="0 0 32 32"><rect x="11" y="3" width="17" height="21" rx="3" fill="url(#gU)"/><rect x="4" y="9" width="17" height="21" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/></symbol>
+<symbol id="i-game" viewBox="0 0 32 32"><path d="M9 8h14c5 0 8 6 8 13 0 4-3 5-5 3l-3-4H9l-3 4c-2 2-5 1-5-3 0-7 3-13 8-13z" fill="url(#gP)"/><path d="M9 13v5M6.500 15.500h5" stroke="#312e81" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="14" r="1.600" fill="#f59e0b"/><circle cx="24" cy="17" r="1.600" fill="#22d3ee"/></symbol>
+<symbol id="i-star" viewBox="0 0 32 32"><path d="m16 2 4.200 8.800 9.800 1.400-7.100 6.800 1.700 9.700L16 24l-8.600 4.700 1.700-9.700L2 12.200l9.800-1.400z" fill="url(#gO)" stroke="#fff8"/></symbol></svg>
 <div id="app"></div><div id="modal" onclick="if(event.target==this)X()"><div id="mb"></div></div>
 <div id="ov"></div><div id="chip" onclick="ovShow()">⏳ Pedido en revisión</div>
 <script>
@@ -122,7 +179,7 @@ function notices(){M(`<h2>🔔 Avisos</h2>${S.cfg.notices.map(n=>`<div class="ro
 /* HOME */
 function liveHtml(){const ok=S.orders.filter(o=>o.type=='recarga'&&o.status=='ok'),l=ok.sort((a,b)=>b.ts-a.ts)[0];
 return `<div class="live"><div class="dot"></div><div><b>En vivo</b><div class="mu">Recargas entregadas en total</div></div><div class="big" style="margin-left:auto">${ok.length}</div></div><div class="row mu">${l?`Última: 💎 ${l.d} ${esc(l.game)} · ID ${esc(String(l.pid).slice(0,3))}•••• · hace ${ago(l.ts)}`:'Aún no hay recargas entregadas'}</div>`}
-function home(){const c=S.cfg;$('#mn').innerHTML=`<div class="hero"><b>👑 ¡Bienvenido a NEVL LUXE!</b>Tu tienda de diamantes de confianza</div>
+function home(){const c=S.cfg;$('#mn').innerHTML=`<div class="hero"><svg class="hg"><use href="#i-gem"/></svg><b>👑 ¡Bienvenido a NEVL LUXE!</b>Tu tienda de diamantes de confianza</div>
 <div class="msgs"><div>⚡ Recargas en menos de 15 minutos</div><div>🔒 Rápidos y seguros</div><div>💰 Los mejores precios</div></div>
 <div class="gg">${S.games.map((g,i)=>`<button class="gc" onclick="offer(${i})"><div class="im">🔥💎</div><div class="nm">Oferta ${esc(g.n)}<span>›</span></div></button>`).join('')}</div>
 <div class="card" id="lv">${liveHtml()}</div>
@@ -167,7 +224,7 @@ S.orders.push(o);save();X();watch=o.id;seen=null;ovShow();R()}
 /* OVERLAY */
 function ovShow(){const o=S.orders.find(o=>o.id==watch);if(!o)return;seen=o.status;const v=$('#ov');v.style.display='flex';$('#chip').style.display='none';
 const sm=`<div class="sum"><div>📦 ${o.type=='recarga'?`${esc(o.game)} 💎 ${o.d}`:'Depósito de créditos'}</div><div>💰 ${o.method=='usdt'||o.method=='cred'?o.cr+(o.method=='usdt'?' USDT':' NLX'):o.price+' Saldo'}</div><div>💳 ${T(o.method)}</div>${o.pid?`<div>🎮 ID: ${esc(o.pid)}</div>`:''}<div>🧾 #${o.id}</div></div>`;
-const st={p:['<div class="ring"></div>','Procesando tu pedido…','Un administrador lo está revisando ⏳'],ok:['<div class="res" style="background:var(--ok);--c:#22c55e">✔</div>','¡Pedido aceptado! 🎉','Tu recarga fue entregada con éxito'],no:['<div class="res" style="background:var(--no);--c:#ef4444">✖</div>','Pedido rechazado','Contacta con soporte si crees que es un error']}[o.status];
+const st={p:['<div class="ring"><svg class="ic ic-gem"><use href="#i-gem"/></svg></div>','Procesando tu pedido…','Un administrador lo está revisando ⏳'],ok:['<div class="res" style="background:var(--ok);--c:#22c55e">✔</div>','¡Pedido aceptado! 🎉','Tu recarga fue entregada con éxito'],no:['<div class="res" style="background:var(--no);--c:#ef4444">✖</div>','Pedido rechazado','Contacta con soporte si crees que es un error']}[o.status];
 v.style.background=o.status=='ok'?'radial-gradient(circle at 50% 30%,#064e2b,#04100a)':o.status=='no'?'radial-gradient(circle at 50% 30%,#5b0f0f,#100404)':'';
 v.innerHTML=st[0]+`<h1 style="font-size:24px">${st[1]}</h1><p style="opacity:.8">${st[2]}</p>${sm}<button class="b" style="max-width:300px" onclick="ovMin()">${o.status=='p'?'Minimizar':'Cerrar'}</button>`}
 function ovMin(){$('#ov').style.display='none';const o=S.orders.find(o=>o.id==watch);if(o&&o.status=='p')$('#chip').style.display='block';else watch=null}
@@ -216,6 +273,13 @@ $('#mn').innerHTML=`<div class="ph"><div><div class="pt">Mi Wallet</div><div cla
 <div class="card"><h2>Últimos depósitos</h2>${dep.map(o=>`<div class="row"><span>+${o.cr} NLX<div class="mu">${T(o.method)} · ${ago(o.ts)}</div></span>${badge(o.status)}</div>`).join('')||'<p class="mu">Todavía no tienes movimientos</p>'}</div>`}
 function profile(){const u=me(),n=S.orders.filter(o=>o.email==u.email&&o.type=='recarga'&&o.status=='ok').length;
 $('#mn').innerHTML=`<div class="ph"><div><div class="pt">Mi perfil</div><div class="mu">Tu cuenta, siempre contigo.</div></div></div><div class="pc"><div style="font-weight:800;letter-spacing:1px">♛ NEVL LUXE<br><span style="color:var(--ac);font-size:12px;letter-spacing:3px">ID DE JUGADOR</span></div><div style="display:flex;gap:14px;align-items:center;margin:16px 0"><div class="av">${esc(u.n[0].toUpperCase())}</div><div style="min-width:0"><div style="font-size:26px;font-weight:800;word-break:break-word">${esc(u.n.toUpperCase())}</div><div class="mu" style="word-break:break-all">${esc(u.email)}</div><span class="chip g">✔ Verificado</span>${isAd()?' <span class="chip g">ADMIN</span>':''}</div></div><div class="st3"><div><b>${n}</b>Recargas</div><div><b>${u.cr}</b>Saldo NLX</div><div><b>${esc(u.tel||'—')}</b>Teléfono</div></div><div class="bc"></div><div class="mu" style="text-align:right;font-weight:800;letter-spacing:3px">#${esc(u.ts.toString(36).toUpperCase().slice(-6))}</div></div><button class="b no" onclick="out()">Cerrar sesión</button>`}
+/* ICONS */
+const EM={'💎':'gem','👑':'crown','⚡':'bolt','🛡':'shield','🔒':'shield','🕒':'clock','⏳':'clock','📅':'clock','🏠':'home','🧾':'rec','👛':'wallet','👤':'user','🏪':'shop','🔔':'bell','💳':'card','🌓':'theme','🔥':'flame','📦':'box','✔':'check','✖':'x','❤':'heart','📱':'phone','🏦':'bank','💵':'coin','💰':'coin','🤖':'bot','💬':'chat','👥':'group','📢':'mega','📤':'send','➕':'plus','⊕':'plus','🛍':'bag','📋':'copy','🎮':'game','⭐':'star','🎉':'star'};
+const RX=new RegExp('('+Object.keys(EM).join('|')+')\\uFE0F?','gu');
+function swap(r){const w=document.createTreeWalker(r,4),L=[];let n;while(n=w.nextNode()){if(n.data.search(RX)>=0&&!n.parentNode.closest('svg,script,style,textarea'))L.push(n)}
+L.forEach(n=>{const t=document.createElement('template');t.innerHTML=esc(n.data).replace(RX,(m,e)=>`<svg class="ic ic-${EM[e]}"><use href="#i-${EM[e]}"/></svg>`);n.replaceWith(t.content)})}
+let bz=0;const ob=new MutationObserver(()=>{if(bz)return;bz=1;swap(document.body);ob.takeRecords();bz=0});ob.observe(document.body,{childList:true,subtree:true,characterData:true});
+const fx=document.createElement('div');fx.id='fx';for(let i=0;i<16;i++){const s=document.createElement('span'),z=3+Math.random()*6;s.style.cssText=`left:${Math.random()*100}%;width:${z}px;height:${z}px;animation-duration:${6+Math.random()*8}s;animation-delay:-${Math.random()*10}s`;fx.appendChild(s)}document.body.appendChild(fx);
 /* LIVE POLL */
 setInterval(()=>{load();const l=$('#lv');if(l)l.innerHTML=liveHtml();const o=S.orders.find(o=>o.id==watch);if(o&&o.status!=seen){ovShow()}},2000);
 R();
